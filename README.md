@@ -1,4 +1,4 @@
-# Full Stack Web Development - Lab Portfolio
+# Full Stack Web Development 
 
  **Student Name**: Chella Gouri Sai Sree
  
