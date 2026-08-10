@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Color Changer</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-top: 100px;
+            background-color: lightblue;
+            transition: 0.5s;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #changeBtn {
+            background-color: darkblue;
+            color: white;
+        }
+
+        #resetBtn {
+            background-color: gray;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="title">Dynamic Color Page</h1>
+    <p id="message">Click "Change Color" to change the background.</p>
+
+    <button id="changeBtn" onclick="changeColor()">Change Color</button>
+    <button id="resetBtn" onclick="resetColor()">Reset</button>
+
+    <script>
+        let colors = ["lightblue", "lightgreen", "lightcoral", "lightyellow", "plum"];
+        let currentColor = 0;
+
+        function changeColor() {
+            currentColor++;
+
+            if (currentColor >= colors.length) {
+                currentColor = 0;
+            }
+
+            document.body.style.backgroundColor = colors[currentColor];
+
+            document.getElementById("message").innerHTML =
+                "Current color: " + colors[currentColor];
+        }
+
+        function resetColor() {
+            currentColor = 0;
+
+            document.body.style.backgroundColor = colors[currentColor];
+
+            document.getElementById("message").innerHTML =
+                "Color has been reset!";
+        }
+    </script>
+
+</body>
+</html>
