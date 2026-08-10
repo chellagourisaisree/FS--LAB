@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>To-Do List</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .todo-container {
+            background-color: white;
+            width: 400px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px #aaa;
+        }
+
+        input {
+            width: 65%;
+            padding: 10px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #00897b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00695c;
+        }
+
+        li {
+            text-align: left;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e8f5f3;
+            border-radius: 5px;
+        }
+
+        .delete {
+            float: right;
+            background-color: #e53935;
+            padding: 5px 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="todo-container">
+
+        <h1>To-Do List</h1>
+
+        <input type="text" id="taskInput" placeholder="Enter a task">
+
+        <button onclick="addTask()">Add</button>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <script>
+
+        let tasks = [];
+
+        function addTask() {
+
+            let task = document.getElementById("taskInput").value;
+
+            if (task === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            tasks.push(task);
+
+            document.getElementById("taskInput").value = "";
+
+            displayTasks();
+        }
+
+        function displayTasks() {
+
+            let list = document.getElementById("taskList");
+
+            list.innerHTML = "";
+
+            for (let i = 0; i < tasks.length; i++) {
+
+                let li = document.createElement("li");
+
+                li.innerHTML = tasks[i] +
+                    " <button class='delete' onclick='deleteTask(" +
+                    i + ")'>Delete</button>";
+
+                list.appendChild(li);
+            }
+        }
+
+        function deleteTask(index) {
+
+            tasks.splice(index, 1);
+
+            displayTasks();
+        }
+
+    </script>
+
+</body>
+
+</html>
