@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0    ">
+    <title>my_styled_webpage</title>
+    <style>
+        /* ==========================
+   BODY
+========================== */
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8fffd;
+        }
+
+        /* ==========================
+   HEADER
+========================== */
+
+        header {
+            background: linear-gradient(to right, #1a1a1a, #025f55, #06a18c);
+            padding: 50px;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 6px black;
+        }
+
+        /* ==========================
+   NAVIGATION
+========================== */
+
+        nav {
+            text-align: right;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #d8fff7;
+            margin: 0 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+            text-decoration: underline;
+            text-shadow: 0px 0px 8px #9ff7e6;
+        }
+
+        /* ==========================
+   HEADINGS
+========================== */
+
+        h2 {
+            color: #025f55;
+            text-align: center;
+        }
+
+        /* ==========================
+   CANVAS SECTION
+========================== */
+
+        .canvas-section {
+            background: linear-gradient(to bottom, #eefcf9, #d9f3ec);
+            padding: 40px;
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+            background: white;
+            border: 2px solid #025f55;
+            border-radius: 15px;
+            box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ==========================
+   FEATURES SECTION
+========================== */
+
+        .features {
+            background: linear-gradient(to bottom, #dff7f2, #cfeee6);
+            padding: 40px;
+        }
+
+        /* ==========================
+   CARDS
+========================== */
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 250px;
+            background: linear-gradient(to bottom, #163531, #0b5d54);
+            border: 2px solid #028172;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: #eefcf8;
+            box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.45);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            color: #d8fff7;
+            font-size: 24px;
+        }
+
+        .card p {
+            color: #eefcf8;
+            line-height: 1.6;
+        }
+
+        /* ==========================
+   BUTTON
+========================== */
+
+        button {
+            background: #d8fff7;
+            color: #163531;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: white;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        /* ==========================
+   FOOTER
+========================== */
+
+        footer {
+            background: linear-gradient(to right, #1a1a1a, #025f55, #06a18c);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header align="center">
+        <nav align="right">
+            <a href="#">Home</a>&nbsp|&nbsp
+            <a href="#">About</a>&nbsp|&nbsp
+            <a href="#">Contact</a>&nbsp|&nbsp
+        </nav>
+        <h1><i><b>My Styled Webpage</b></i></h1>
+    </header>
+    <hr>
+    <br><br>
+    <section class="canvas-section">
+
+        <h2>HTML5 Canvas</h2>
+
+        <canvas id="myCanvas" width="700" height="300"></canvas>
+
+    </section>
+
+
+    <br>
+    <hr>
+    <section class="features">
+
+        <h2>Featured Sections</h2>
+
+        <div class="container">
+
+            <div class="card">
+
+                <h3>HTML5</h3>
+
+                <p>
+                    HTML5 provides the basic structure of a webpage using meaningful tags.
+                </p>
+
+                <button>Learn More</button>
+
+            </div>
+
+            <div class="card">
+
+                <h3>CSS3</h3>
+
+                <p>
+                    CSS3 improves the appearance of webpages using colors, layouts and effects.
+                </p>
+
+                <button>Learn More</button>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Canvas</h3>
+
+                <p>
+                    The HTML5 Canvas element allows us to draw graphics using JavaScript.
+                </p>
+
+                <button>Learn More</button>
+
+            </div>
+
+        </div>
+    </section>
+    <footer>
+
+        <h3>My Styled Webpage</h3>
+
+        <p>Designed using HTML5, CSS3 and Canvas</p>
+
+
+    </footer>
+    <script>
+
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        /* Rectangle */
+        ctx.fillStyle = "pink";
+        ctx.fillRect(40, 40, 150, 80);
+
+        /* Circle */
+        ctx.beginPath();
+        ctx.arc(320, 80, 40, 0, 2 * Math.PI);
+        ctx.fillStyle = "cyan";
+        ctx.fill();
+
+        /* Line */
+        ctx.beginPath();
+        ctx.moveTo(450, 40);
+        ctx.lineTo(650, 150);
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 5;
+        ctx.stroke();
+
+        /* Name */
+        ctx.font = "30px Arial";
+        ctx.fillStyle = "brown";
+        ctx.fillText("Sree", 250, 220);
+
+    </script>
+</body>
+
+</html>
