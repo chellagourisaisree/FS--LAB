@@ -1,0 +1,109 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOM Manipulation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #box {
+            width: 300px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="heading">DOM Manipulation</h1>
+
+    <div id="box">
+
+        <p id="message">This is the original content.</p>
+
+        <img id="image"
+             src="https://via.placeholder.com/150"
+             alt="Original Image"
+             width="150">
+
+    </div>
+
+    <button onclick="changeContent()">
+        Change Content
+    </button>
+
+    <button onclick="changeStyle()">
+        Change Style
+    </button>
+
+    <button onclick="changeAttribute()">
+        Change Attribute
+    </button>
+
+
+    <script>
+
+        // Change HTML Content
+        function changeContent() {
+
+            document.getElementById("message").innerHTML =
+                "Content changed using JavaScript DOM!";
+        }
+
+
+        // Change CSS Style
+        function changeStyle() {
+
+            const box = document.getElementById("box");
+
+            box.style.backgroundColor = "lightblue";
+            box.style.color = "darkblue";
+            box.style.border = "3px solid blue";
+            box.style.fontSize = "20px";
+        }
+
+
+        // Change HTML Attribute
+        function changeAttribute() {
+
+            const image = document.getElementById("image");
+
+            image.setAttribute(
+                "src",
+                "https://via.placeholder.com/250"
+            );
+
+            image.setAttribute(
+                "alt",
+                "Updated Image"
+            );
+
+            image.setAttribute(
+                "width",
+                "250"
+            );
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
