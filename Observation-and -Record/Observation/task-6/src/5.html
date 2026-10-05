@@ -1,0 +1,92 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Functions and Classes</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Functions and Classes</h1>
+
+    <h2>Function Example</h2>
+
+    <p id="functionResult"></p>
+
+    <h2>Class and Objects Example</h2>
+
+    <p id="student1"></p>
+    <p id="student2"></p>
+    <p id="student3"></p>
+
+
+    <script>
+
+        // Function
+        function add(a, b) {
+            return a + b;
+        }
+
+        let result = add(10, 20);
+
+        document.getElementById("functionResult").innerHTML =
+            "Addition using Function: " + result;
+
+
+        // Class
+        class Student {
+
+            // Constructor
+            constructor(name, branch, year) {
+                this.name = name;
+                this.branch = branch;
+                this.year = year;
+            }
+
+            // Method
+            displayDetails() {
+                return "Name: " + this.name +
+                       "<br>Branch: " + this.branch +
+                       "<br>Year: " + this.year;
+            }
+        }
+
+
+        // Creating multiple objects
+        let student1 = new Student(
+            "Gouri",
+            "CSE-AIML",
+            3
+        );
+
+        let student2 = new Student(
+            "Sai",
+            "CSE",
+            3
+        );
+
+        let student3 = new Student(
+            "Sree",
+            "ECE",
+            2
+        );
+
+
+        // Display objects
+        document.getElementById("student1").innerHTML =
+            "<b>Student 1</b><br>" +
+            student1.displayDetails();
+
+        document.getElementById("student2").innerHTML =
+            "<br><b>Student 2</b><br>" +
+            student2.displayDetails();
+
+        document.getElementById("student3").innerHTML =
+            "<br><b>Student 3</b><br>" +
+            student3.displayDetails();
+
+    </script>
+
+</body>
+</html>
+```
