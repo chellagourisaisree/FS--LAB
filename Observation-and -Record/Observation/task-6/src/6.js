@@ -1,4 +1,4 @@
-```javascript
+
 // Experiment 6: Node.js Modules
 // Demonstrating os, path and fs modules
 
