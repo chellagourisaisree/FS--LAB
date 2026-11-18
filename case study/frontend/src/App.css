@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: white;
+  color: #222;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #1565c0;
+  color: white;
+  padding: 10px 24px;
+}
+
+.navbar h2 {
+  margin: 8px 0;
+  font-size: 20px;
+}
+
+.navbar button {
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.navbar button.active {
+  border-bottom: 2px solid white;
+}
+
+.container {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+button {
+  background: #1565c0;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  margin-right: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.red {
+  background: #c62828;
+}
+
+button.grey {
+  background: #757575;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px 20px;
+  width: 200px;
+  margin: 16px 0;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.big-number {
+  font-size: 36px;
+  font-weight: bold;
+  color: #1565c0;
+  margin: 8px 0 0;
+}
+
+.form {
+  max-width: 420px;
+}
+
+.form label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.form input,
+.form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.form button {
+  margin-top: 18px;
+}
+
+.search {
+  width: 100%;
+  max-width: 320px;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  margin-bottom: 14px;
+  box-sizing: border-box;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background: #e3f2fd;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.message.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.message.error {
+  background: #ffebee;
+  color: #c62828;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
